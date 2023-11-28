@@ -1,32 +1,33 @@
 let users = {
     "1234": { id: "1234", username: "John Doe", password: "password123", email: "email@nyu.edu" }
   };
-
+const bcryptjs = require('bcryptjs');
+const user = require('../models/User');
   const registerRouter = async (req, res) => {
     // req.body: username, email, password
     // TODO: might need email authentification / email optional
     const { username, email, password } = req.body;
-  
+    
     try {
       // Check if the email is already registered
-      const existingUser = Object.values(users).find(user => user.email === email);
-  
+      const existingUser = await user.findOne({ email });
       if (existingUser) {
         res.status(400).json({ message: "Email is already registered." });
       } else {
         // Generate a unique user ID (you can use a library like uuid for this)
         const userId = generateUniqueId();
-  
+        const hashedPassword = bcryptjs.hashSync(password, 10);
         // Create a new user object
-        const newUser = {
-          id: userId,
-          username,
-          email,
-          password
-        };
+        const newUser = new user({
+          uuid: userId,
+          name: username,
+          email: email,
+          password: hashedPassword,
+          favorites: [],
+        });
   
         // Add the new user to the users object
-        users[userId] = newUser;
+        await newUser.save();
   
         res.status(201).json({ message: "User successfully registered", user: newUser });
         console.log('New user registered:', newUser);
