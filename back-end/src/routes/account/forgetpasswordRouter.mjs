@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import sendRecoveryEmail from './sendEmail.mjs';
+import sendRecoveryEmail from '../sendEmail.mjs';
 import axios from 'axios';
 
 const axiosMongoDB = axios.create({

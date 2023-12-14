@@ -1,4 +1,4 @@
-import User from "../models/User.mjs";
+import User from "../../models/User.mjs";
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 

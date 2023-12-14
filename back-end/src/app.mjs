@@ -12,19 +12,19 @@ import passport from "passport";
 // config
 import JwtStrategy from "./config/JwtStrategy.mjs";
 // routes
-import loginRouter from "./routes/loginRouter.mjs";
+import loginRouter from "./routes/account/loginRouter.mjs";
 import registerRouter from "./routes/registerRouter.mjs";
-import changeusernameRouter from "./routes/changeusernameRouter.mjs";
-import forgetpasswordRouter from "./routes/forgetpasswordRouter.mjs";
-import delaccountRouter from "./routes/delaccountRouter.mjs";
-import resetpasswordRouter from "./routes/resetpasswordRouter.mjs";
-import resetemailRouter from "./routes/resetemailRouter.mjs";
-import searchArtsRouter from "./routes/searchArtsRouter.mjs";
+import changeusernameRouter from "./routes/account/changeusernameRouter.mjs";
+import forgetpasswordRouter from "./routes/account/forgetpasswordRouter.mjs";
+import delaccountRouter from "./routes/account/delaccountRouter.mjs";
+import resetpasswordRouter from "./routes/account/resetpasswordRouter.mjs";
+import resetemailRouter from "./routes/account/resetemailRouter.mjs";
+import searchArtsRouter from "./routes/art/searchArtsRouter.mjs";
 import {
   addFavListRouter,
   favListRouter,
   getArts,
-} from "./routes/modifyFavListRouter.mjs";
+} from "./routes/art/modifyFavListRouter.mjs";
 
 export function getExpress() {
   const app = express();

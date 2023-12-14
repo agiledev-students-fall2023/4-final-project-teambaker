@@ -1,4 +1,4 @@
-import Artwork from '../models/Artwork.mjs';
+import Artwork from '../../models/Artwork.mjs';
 import axios from 'axios';
 
 const axiosMongoDB = axios.create({

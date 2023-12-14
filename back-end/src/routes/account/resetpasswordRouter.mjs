@@ -1,7 +1,7 @@
 import e from "express";
 import { body, validationResult } from 'express-validator';
 import jwt from 'jsonwebtoken';
-import User from '../models/User.mjs';
+import User from '../../models/User.mjs';
 import bcrypt from 'bcryptjs';
 import axios from 'axios';
 

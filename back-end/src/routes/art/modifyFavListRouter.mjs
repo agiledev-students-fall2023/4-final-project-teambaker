@@ -1,7 +1,7 @@
-import Artwork from '../models/Artwork.mjs';
+import Artwork from '../../models/Artwork.mjs';
 import { body, validationResult } from 'express-validator';
 import jwt from 'jsonwebtoken';
-import User from '../models/User.mjs';
+import User from '../../models/User.mjs';
 import mongoose from 'mongoose';
 import axios from 'axios';
 

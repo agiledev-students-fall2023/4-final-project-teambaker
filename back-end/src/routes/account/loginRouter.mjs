@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import User from '../models/User.mjs';
+import User from '../../models/User.mjs';
 import axios from 'axios';
 
 const axiosMongoDB = axios.create({
